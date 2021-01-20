@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/pizzas",
+            "lambdaFunction": "AmplifyXzibbitistPizza",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/pizzas"
+        }
+    ],
+    "resourceName": "AmplifyXzibbitistRest",
+    "apiName": "AmplifyXzibbitistRest",
+    "functionArns": [
+        {
+            "lambdaFunction": "AmplifyXzibbitistPizza"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyxzibbitist-dev-180222-authRole",
+        "unAuthRoleName": "amplify-amplifyxzibbitist-dev-180222-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "AmplifyXzibbitistPizza",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
